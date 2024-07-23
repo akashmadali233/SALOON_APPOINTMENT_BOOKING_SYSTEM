@@ -10,7 +10,7 @@ exports.createStaff = async (req, res) => {
     }
 
     // Create new staff member
-    const staff = await Staff.create({ name, specialization, availability });
+    const staff = await Staff.create({ name, specializations : specialization, availability });
 
     res.status(201).json({ message: 'Staff created successfully', staff });
   } catch (error) {
