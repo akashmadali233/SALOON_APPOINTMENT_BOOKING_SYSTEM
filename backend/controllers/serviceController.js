@@ -38,7 +38,7 @@ exports.updateService = async (req, res) => {
   try {
     const serviceId = req.body.id;
     const { name, description, duration, price } = req.body;
-    if(!name && !description && !duration && !price){
+    if(!name || !description || !duration || !price){
         res.status(400).json({
           message : "Please Enter all the Feilds"
         });

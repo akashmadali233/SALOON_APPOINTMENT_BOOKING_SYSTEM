@@ -15,7 +15,7 @@ app.use(compression());
 // // Import routes
 const authRoutes = require('./routes/authRoutes');
 const serviceRoutes = require('./routes/serviceRoutes');
-// const staffRoutes = require('./routes/staffRoutes');
+const staffRoutes = require('./routes/staffRoutes');
 // const appointmentRoutes = require('./routes/appointmentRoutes');
 // const notificationRoutes = require('./routes/notificationRoutes');
 // const paymentRoutes = require('./routes/paymentRoutes');
@@ -25,7 +25,7 @@ const serviceRoutes = require('./routes/serviceRoutes');
 // // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/services', serviceRoutes);
-// app.use('/api/staff', staffRoutes);
+app.use('/api/staff', staffRoutes);
 // app.use('/api/appointments', appointmentRoutes);
 // app.use('/api/notifications', notificationRoutes);
 // app.use('/api/payments', paymentRoutes);
