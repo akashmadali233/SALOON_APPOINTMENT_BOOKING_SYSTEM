@@ -19,7 +19,7 @@ const staffRoutes = require('./routes/staffRoutes');
 const appointmentRoutes = require('./routes/appointmentRoutes');
 // const notificationRoutes = require('./routes/notificationRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
-// const reviewRoutes = require('./routes/reviewRoutes');
+const reviewRoutes = require('./routes/reviewRoutes');
 // const adminRoutes = require('./routes/adminRoutes');
 
 // // Use routes
@@ -29,7 +29,7 @@ app.use('/api/staff', staffRoutes);
 app.use('/api/appointments', appointmentRoutes);
 // app.use('/api/notifications', notificationRoutes);
 app.use('/api/payments', paymentRoutes);
-// app.use('/api/reviews', reviewRoutes);
+app.use('/api/reviews', reviewRoutes);
 // app.use('/api/admin', adminRoutes);
 
 // Test database connection
@@ -38,7 +38,7 @@ sequelize.authenticate()
   .catch(err => console.error('Database connection failed:', err));
 
 // Sync models with the database
-sequelize.sync({force:false})
+sequelize.sync({force:true})
   .then(() => console.log('Models synchronized with the database'))
   .catch(err => console.error('Error syncing models:', err));
 

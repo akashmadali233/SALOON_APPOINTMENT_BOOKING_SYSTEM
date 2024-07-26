@@ -1,27 +1,25 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Review = require('./Review');
 
 const Service = sequelize.define('Service', {
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
-  },
   name: {
     type: DataTypes.STRING,
     allowNull: false
   },
   description: {
-    type: DataTypes.STRING
+    type: DataTypes.TEXT,
+    allowNull: false
   },
   duration: {
     type: DataTypes.INTEGER,
-    allowNull: false // Duration in minutes
+    allowNull: false
   },
   price: {
     type: DataTypes.FLOAT,
     allowNull: false
   }
 });
+
 
 module.exports = Service;
